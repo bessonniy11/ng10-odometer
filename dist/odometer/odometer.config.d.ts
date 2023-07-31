@@ -1,4 +1,4 @@
-export interface Ng2OdometerConfigModel {
+export interface Ng10OdometerConfigModel {
     animation?: string;
     format?: string;
     theme?: string;
@@ -6,7 +6,7 @@ export interface Ng2OdometerConfigModel {
     duration?: number;
     auto?: boolean;
 }
-export declare class Ng2OdometerConfig implements Ng2OdometerConfigModel {
+export declare class Ng10OdometerConfig implements Ng10OdometerConfigModel {
     animation?: string;
     format: string;
     theme?: string;

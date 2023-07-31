@@ -1,6 +1,9 @@
-# ng10-odometer [![npm version](https://img.shields.io/npm/v/ng2-odometer.svg?style=flat)](https://www.npmjs.com/package/ng2-odometer) [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
+# ng10-odometer [![npm version](https://img.shields.io/npm/v/ng10-odometer.svg?style=flat)](https://www.npmjs.com/package/ng10-odometer) [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 
-Odometer for Angular2 that wraps HubSpot's Odometer [http://github.hubspot.com/odometer/docs/welcome/](http://github.hubspot.com/odometer/docs/welcome/)
+Odometer for Angular 10
+
+Made on the basis of ng2-odometer.
+Fixed static forRoot(): ModuleWithProviders; to static forRoot(): ModuleWithProviders<Ng10OdometerModule>;
 
 ## Quick Start
 
@@ -10,10 +13,15 @@ npm install ng10-odometer --save
 
 ## Table of contents
 
-- [Setup](#setup)
-- [Usage](#usage)
-- [Configuration](#configuration)
-- [Demo](#demo)
+- [ng10-odometer  ](#ng10-odometer--)
+  - [Quick Start](#quick-start)
+  - [Table of contents](#table-of-contents)
+  - [Setup](#setup)
+  - [Usage](#usage)
+  - [Configuration](#configuration)
+  - [Demo](#demo)
+  - [TODO:](#todo)
+  - [License](#license)
 
 ## Setup
 
@@ -22,7 +30,7 @@ First you need to install the npm module:
 npm install ng10-odometer --save
 ```
 
-Then add the `Ng2OdometerModule` to the imports array of your application module.
+Then add the `Ng10OdometerModule` to the imports array of your application module.
 
 ```typescript
 import { NgModule } from '@angular/core';
@@ -167,7 +175,6 @@ Then go to [http://localhost:4200](http://localhost:4200/) to check the demo run
 
 ## TODO:
 
-* Update to Angular4
 * Add tests to the library and demo
 * Add new themes
 * Create a Directive also

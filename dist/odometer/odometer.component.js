@@ -1,22 +1,28 @@
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    var c = arguments.length,
+        r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+        d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    else
+        for (var i = decorators.length - 1; i >= 0; i--)
+            if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 var _ = require("lodash");
 var core_1 = require("@angular/core");
 var rxjs_1 = require("rxjs");
 var odometer_config_1 = require("./odometer.config");
 var themes_1 = require("./themes");
 var Odometer = require('odometer');
-var Ng2OdometerComponent = (function () {
-    function Ng2OdometerComponent() {
+var Ng10OdometerComponent = (function () {
+    function Ng10OdometerComponent() {
         this.config = {};
         this.observable = undefined;
         this.animation = undefined;
@@ -35,9 +41,9 @@ var Ng2OdometerComponent = (function () {
             'train-station'
         ];
     }
-    Ng2OdometerComponent.prototype.initOdometer = function () {
-        if (!_.isUndefined(this.container)
-            && typeof Odometer !== 'undefined') {
+    Ng10OdometerComponent.prototype.initOdometer = function () {
+        if (!_.isUndefined(this.container) &&
+            typeof Odometer !== 'undefined') {
             this.odometer = new Odometer({
                 el: this.container.nativeElement,
                 animation: this.config.animation,
@@ -51,8 +57,8 @@ var Ng2OdometerComponent = (function () {
             }
         }
     };
-    Ng2OdometerComponent.prototype.initConfig = function () {
-        this.config = _.defaults(this.config, new odometer_config_1.Ng2OdometerConfig());
+    Ng10OdometerComponent.prototype.initConfig = function () {
+        this.config = _.defaults(this.config, new odometer_config_1.Ng10OdometerConfig());
         if (!_.isUndefined(this.animation)) {
             this.config.animation = this.animation;
         }
@@ -75,7 +81,7 @@ var Ng2OdometerComponent = (function () {
             this.config.theme = 'default';
         }
     };
-    Ng2OdometerComponent.prototype.ngOnInit = function () {
+    Ng10OdometerComponent.prototype.ngOnInit = function () {
         var _this = this;
         if (!_.isUndefined(this.observable) && !this.config.auto) {
             this.subscription = this.observable.subscribe(function (trigger) {
@@ -86,62 +92,64 @@ var Ng2OdometerComponent = (function () {
         }
         this.initConfig();
     };
-    Ng2OdometerComponent.prototype.ngOnDestroy = function () {
+    Ng10OdometerComponent.prototype.ngOnDestroy = function () {
         if (!_.isUndefined(this.subscription)) {
             this.subscription.unsubscribe();
         }
     };
-    Ng2OdometerComponent.prototype.ngOnChanges = function () {
+    Ng10OdometerComponent.prototype.ngOnChanges = function () {
         if (!_.isUndefined(this.number) && !_.isUndefined(this.odometer) && this.config.auto) {
             this.odometer.update(this.number);
         }
     };
-    Ng2OdometerComponent.prototype.ngAfterViewInit = function () {
+    Ng10OdometerComponent.prototype.ngAfterViewInit = function () {
         this.initOdometer();
     };
-    return Ng2OdometerComponent;
+    return Ng10OdometerComponent;
 }());
 __decorate([
-    core_1.ViewChild('container', { read: core_1.ElementRef }),
+    core_1.ViewChild('container', {
+        read: core_1.ElementRef
+    }),
     __metadata("design:type", core_1.ElementRef)
-], Ng2OdometerComponent.prototype, "container", void 0);
+], Ng10OdometerComponent.prototype, "container", void 0);
 __decorate([
     core_1.Input(),
     __metadata("design:type", Number)
-], Ng2OdometerComponent.prototype, "number", void 0);
+], Ng10OdometerComponent.prototype, "number", void 0);
 __decorate([
     core_1.Input(),
     __metadata("design:type", Object)
-], Ng2OdometerComponent.prototype, "config", void 0);
+], Ng10OdometerComponent.prototype, "config", void 0);
 __decorate([
     core_1.Input(),
     __metadata("design:type", rxjs_1.Observable)
-], Ng2OdometerComponent.prototype, "observable", void 0);
+], Ng10OdometerComponent.prototype, "observable", void 0);
 __decorate([
     core_1.Input(),
     __metadata("design:type", String)
-], Ng2OdometerComponent.prototype, "animation", void 0);
+], Ng10OdometerComponent.prototype, "animation", void 0);
 __decorate([
     core_1.Input(),
     __metadata("design:type", String)
-], Ng2OdometerComponent.prototype, "format", void 0);
+], Ng10OdometerComponent.prototype, "format", void 0);
 __decorate([
     core_1.Input(),
     __metadata("design:type", String)
-], Ng2OdometerComponent.prototype, "theme", void 0);
+], Ng10OdometerComponent.prototype, "theme", void 0);
 __decorate([
     core_1.Input(),
     __metadata("design:type", Number)
-], Ng2OdometerComponent.prototype, "value", void 0);
+], Ng10OdometerComponent.prototype, "value", void 0);
 __decorate([
     core_1.Input(),
     __metadata("design:type", Number)
-], Ng2OdometerComponent.prototype, "duration", void 0);
+], Ng10OdometerComponent.prototype, "duration", void 0);
 __decorate([
     core_1.Input(),
     __metadata("design:type", Boolean)
-], Ng2OdometerComponent.prototype, "auto", void 0);
-Ng2OdometerComponent = __decorate([
+], Ng10OdometerComponent.prototype, "auto", void 0);
+Ng10OdometerComponent = __decorate([
     core_1.Component({
         selector: 'ng10-odometer',
         encapsulation: core_1.ViewEncapsulation.None,
@@ -157,6 +165,6 @@ Ng2OdometerComponent = __decorate([
         ],
         template: "<div #container></div>"
     })
-], Ng2OdometerComponent);
-exports.Ng2OdometerComponent = Ng2OdometerComponent;
+], Ng10OdometerComponent);
+exports.Ng10OdometerComponent = Ng10OdometerComponent;
 //# sourceMappingURL=odometer.component.js.map
