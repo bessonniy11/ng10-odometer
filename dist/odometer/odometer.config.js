@@ -1,7 +1,9 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var Ng2OdometerConfig = (function () {
-    function Ng2OdometerConfig() {
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var Ng10OdometerConfig = (function () {
+    function Ng10OdometerConfig() {
         this.animation = 'slide';
         this.format = '(,ddd)';
         this.theme = 'default';
@@ -9,7 +11,7 @@ var Ng2OdometerConfig = (function () {
         this.duration = 2000;
         this.auto = true;
     }
-    return Ng2OdometerConfig;
+    return Ng10OdometerConfig;
 }());
-exports.Ng2OdometerConfig = Ng2OdometerConfig;
+exports.Ng10OdometerConfig = Ng10OdometerConfig;
 //# sourceMappingURL=odometer.config.js.map
